@@ -8,7 +8,7 @@ pipeline {
 
     environment{
       NEXUS_GRP_REPO = "vpro-maven-group"
-      NEXUSIP = "172.31.28.180"
+      NEXUSIP = "172.31.27.120"
       NEXUSPORT = "8081"
       SNAPREPO = "vprofile-snapshot"
       RELEASE_REPO = "vprofile-release"
