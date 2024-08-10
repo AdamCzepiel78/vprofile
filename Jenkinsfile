@@ -89,10 +89,10 @@ pipeline {
             }
             post {
                 success {
-                    discordSend description: "Jenkins Pipeline Build", footer: "Status Message", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discordapp.com/api/webhooks/1271745570083569684/mM5d6nwXOIUhf11Ohy47B_GeUSG6bYip2mQbt0R2IwqPRwuSl3QLBF2hpMZOXRYe9TzB"
+                    discordSend description: "Jenkins Pipeline Build with build number ${env.BUILD_NUMBER} was successfull", footer: "Status Message", link: env.BUILD_URL, result: currentBuild.currentResult, title: "Jenkins job ${env.JOB_NAME}", webhookURL: "https://discordapp.com/api/webhooks/1271745570083569684/mM5d6nwXOIUhf11Ohy47B_GeUSG6bYip2mQbt0R2IwqPRwuSl3QLBF2hpMZOXRYe9TzB", image: "https://i.etsystatic.com/40317824/r/il/40a639/4876700262/il_794xN.4876700262_w8p2.jpg"
                 }
                 failure {
-                    discordSend description: "Jenkins Pipeline Build", footer: "Status Message", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discordapp.com/api/webhooks/1271745570083569684/mM5d6nwXOIUhf11Ohy47B_GeUSG6bYip2mQbt0R2IwqPRwuSl3QLBF2hpMZOXRYe9TzB"
+                    discordSend description: "Jenkins Pipeline Build with build number ${env.BUILD_NUMBER} had some failures", footer: "Status Message", link: env.BUILD_URL, result: currentBuild.currentResult, title: "Jenkins job ${env.JOB_NAME}", webhookURL: "https://discordapp.com/api/webhooks/1271745570083569684/mM5d6nwXOIUhf11Ohy47B_GeUSG6bYip2mQbt0R2IwqPRwuSl3QLBF2hpMZOXRYe9TzB", image: "https://i.etsystatic.com/40317824/r/il/40a639/4876700262/il_794xN.4876700262_w8p2.jpg"
                 }
             }   
         }
