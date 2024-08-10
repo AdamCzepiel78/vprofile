@@ -88,5 +88,13 @@ pipeline {
                 )
             }
         }
+        post {
+            success {
+                discordSend description: "Jenkins Pipeline Build", footer: "Status Message", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discordapp.com/api/webhooks/1271745570083569684/mM5d6nwXOIUhf11Ohy47B_GeUSG6bYip2mQbt0R2IwqPRwuSl3QLBF2hpMZOXRYe9TzB"
+            }
+            failure {
+                discordSend description: "Jenkins Pipeline Build", footer: "Status Message", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discordapp.com/api/webhooks/1271745570083569684/mM5d6nwXOIUhf11Ohy47B_GeUSG6bYip2mQbt0R2IwqPRwuSl3QLBF2hpMZOXRYe9TzB"
+            }
+        }
     }
 }
