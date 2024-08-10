@@ -63,9 +63,29 @@ pipeline {
 
         stage("Quality Gate"){
             steps{
-                timeout(time: 10, unit: "MINUTES"){
+                timeout(time: 1, unit: "HOURS"){
                     waitForQualityGate abortPipeline: true
                 }
+            }
+        }
+
+        stage("Upload Artifact"){
+            steps{
+                nexusArtifactUploader(
+                    nexusVersion: 'nexus3',
+                    protocol: 'http',
+                    nexusUrl: "${NEXUSIP}",
+                    groupId: 'QA',
+                    version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
+                    repository: "${RELEASE_REPO}",
+                    credentialsId: "${NEXUS_LOGIN}",
+                    artifacts: [
+                        [artifactId: 'vproapp',
+                        classifier: '',
+                        file: 'target/vprofile-v2.war',
+                        type: 'war']
+                    ]
+                )
             }
         }
     }
