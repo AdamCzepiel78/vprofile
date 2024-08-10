@@ -7,15 +7,15 @@ pipeline {
     }
 
     environment{
-      NEXUS-GRP-REPO = "vpro-maven-group"
+      NEXUS_GRP_REPO = "vpro-maven-group"
       NEXUSIP = "172.31.28.180"
       NEXUSPORT = "8081"
       SNAPREPO = "vprofile-snapshot"
-      RELEASE-REPO = "vprofile-release"
-      CENTRAL-REPO = "vpro-maven-central"
-      NEXUS-USER = "admin"
-      NEXUS-PASS = "G1i2z3z4m5o6h7()=?"
-      NEXUS-LOGIN = "nexuslogin"
+      RELEASE_REPO = "vprofile-release"
+      CENTRAL_REPO = "vpro-maven-central"
+      NEXUS_USER = "admin"
+      NEXUS_PASS = "G1i2z3z4m5o6h7()=?"
+      NEXUS_LOGIN = "nexuslogin"
     }
 
     stages{
